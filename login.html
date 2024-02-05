@@ -24,18 +24,31 @@
     <div>
         <nav>
             <ul style = "padding: 20px; border: 1px solid #ffffff; display: flex; list-style: none; text-align: center; align-items: center;">
-                <li style="flex: 1;"><a href = "index.html">Home</a></li>
+                <li style="flex: 1; color: aqua;"><a href = "index.html">Home</a></li>
                 <li><p style="color: aqua;">&diamondsuit;</p></li>
-                <li style="flex: 1;"><a href = "products.html">Our Products</a></li>
+                <li style="flex: 1; color: aqua;"><a href = "products.html">Our Products</a></li>
                 <li><p style="color: aqua;">&diamondsuit;</p></li>
-                <li style="flex: 1;"><a href = "contact.html">Contact Info.</a></li>
+                <li style="flex: 1; color: aqua;"><a href = "contact.html">Contact Info.</a></li>
                 <li><p style="color: aqua;">&diamondsuit;</p></li>
-                <li style="flex: 1;"><a href = "login.html">Login/Signup</a></li>
+                <li style="flex: 1; color: aqua;"><a href = "login.html">Login/Signup</a></li>
             </ul>
         </nav>
     </div>
     <main>
-        <!-- Add whatever is required right here-->
+        <form action="#" method="post">
+            <fieldset>
+                <legend style="color: aqua;">Login Information</legend>
+                <label style="margin-right: 5px; color: aqua;" for="Username">Username:</label>
+                <input type="text" id="Username" name="Username" required><br>
+                <label style="margin-right: 5px; color: aqua;" for="'Password">Password:</label>
+                <input type="password" id="Password" name="Password" required><br>
+                <input type="submit" value="Sign In">
+            </fieldset>
+        </form> 
+        <div>
+            <h2 style="color: #880097; font-size: 20px;"><strong>If you are a new user,</strong> please sign up using the link below</h2>
+            <a href="#" style="color: #02aac4;">Sign-Up</a>
+        </div>
     </main>
     <footer>
         <p style="color: white;"><strong>&copy; 2024 JJ-Commerce. All rights reserved.</strong></p>
