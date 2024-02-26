@@ -31,8 +31,45 @@ header p{
     padding-right: 20px;
     padding-left: 20px;
     color: white;
+    text-decoration-line: none;
 }
 .NAVBAR a:visited{
     color:aqua;
 }
 /*About Us Section*/
+.about-us{
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+/*Shop Now*/
+.shop-now button{
+    background-color: #4caf50;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.shop-now button:hover{
+    background-color: aqua;
+}
+/*Customer Review Section*/
+.customer-reviews{
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+footer {
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
