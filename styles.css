@@ -9,3 +9,7 @@ header {
 header img{
     float: left;
 }
+
+header h1{
+    float: right;
+}
