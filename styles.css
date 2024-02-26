@@ -1,3 +1,5 @@
+/*HOME PAGE*/
+/*Header*/
 header {
     background-color: #333;
     padding: 20px;
@@ -5,11 +7,15 @@ header {
     display: flex;
     align-items: center;
 }
-
-header img{
-    float: left;
+.header-content {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
 }
-
 header h1{
-    float: right;
+    color: #880097;
 }
+header p{
+    color: #02aac4;
+}
+/*Navigation Bar*/
