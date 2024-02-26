@@ -33,9 +33,6 @@ header p{
     color: white;
     text-decoration-line: none;
 }
-.NAVBAR a:visited{
-    color:aqua;
-}
 /*About Us Section*/
 .about-us{
     display: flex;
