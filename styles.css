@@ -63,10 +63,55 @@ header p{
     padding: 20px;
     margin: 20px;
 }
+/*Footer*/
 footer {
     background-color: #333;
     padding: 10px;
     margin: 0;
     color: white;
     text-align: center;
+}
+
+/*LOGIN*/
+/*main*/
+.loginmain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.form label{
+    display: block;
+    margin: 10px;
+}
+input[type = "text"], input[type = "password"]{
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+input[type = "submit"]{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+    border: none;
+}
+.signup{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.signup a{
+    color: #007bff;
+    margin: 10px;
+    text-decoration-line: none;
+}
+.signup a:hover{
+    text-decoration: underline;
 }

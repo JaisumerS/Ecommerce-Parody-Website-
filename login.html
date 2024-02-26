@@ -25,19 +25,16 @@
             <a href = "login.html">Login/Signup</a>
         </nav>
     </div>
-    <main>
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Login Information</legend>
+    <main class ="loginmain">
+        <form class = "form" action="#" method="post">
                 <label for="Username">Username:</label>
-                <input type="text" id="Username" name="Username" required><br>
+                <input type="text" id="Username" name="Username" placeholder="Enter your username" required><br>
                 <label for="'Password">Password:</label>
-                <input type="password" id="Password" name="Password" required><br>
-                <input type="submit" value="Sign In">
-            </fieldset>
+                <input type="password" id="Password" name="Password" placeholder="Enter your password" required>
+                <input type="submit" value="Login">
         </form> 
-        <div>
-            <h2><strong>If you are a new user,</strong> please sign up using the link below</h2>
+        <div class="signup">
+            <p>Don't have an account?</p>
             <a href="#">Sign-Up</a>
         </div>
     </main>
