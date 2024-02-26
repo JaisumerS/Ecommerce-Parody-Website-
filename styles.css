@@ -115,3 +115,78 @@ input[type = "submit"]{
 .signup a:hover{
     text-decoration: underline;
 }
+/*PRODUCTS AND CONTACT*/
+.productsmain {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+
+  }
+  
+  .product{
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .product:hover {
+    background-color: #ffffff;
+  }
+  
+  .product img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .product p {
+    color: #007BFF;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .product button {
+    background-color: #4caf50;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .product button:hover {
+    background-color: #45A049;
+  }
+
+  .contact-information {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-method {
+    background-color: #ddd;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+  }
+  
+  .social-media-link:hover {
+    color: #007BFF;
+  }
