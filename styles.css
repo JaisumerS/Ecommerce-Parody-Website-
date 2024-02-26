@@ -123,21 +123,19 @@ input[type = "submit"]{
     background-color: #ddd;
     padding: 20px;
     margin: 20px;
-    display: grid;
-    grid-template-columns: auto auto;
-
   }
   
   .product{
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
     display: flex; 
     flex-direction: column; 
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 40%;
   }
   
   .product:hover {
@@ -170,6 +168,21 @@ input[type = "submit"]{
     background-color: #45A049;
   }
 
+@media screen and (min-width: 630px) and (max-width: 896px){
+  .product{
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 630px){
+  .product{
+    width: 90%;
+  }
+  header img{
+    width: 100px;
+  }
+}
+
   .contact-information {
     background-color: #ddd;
     padding: 20px;
@@ -186,7 +199,9 @@ input[type = "submit"]{
     margin: 0px;
     border-radius: 10px;
   }
-  
+  .social-media-link{
+    text-decoration-line: none;
+  }
   .social-media-link:hover {
     color: #007BFF;
   }
