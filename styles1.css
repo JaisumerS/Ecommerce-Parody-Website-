@@ -50,19 +50,14 @@ main {
     background-color: #45A049;
   }
 
-
-
-  .contactmain {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
   .contact-information {
     background-color: #ddd;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .contact-method {
