@@ -50,3 +50,29 @@ main {
   .product button:hover {
     background-color: #45A049;
   }
+
+
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-information {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .contact-method {
+    background-color: #ddd;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+  }
+  
+  .social-media-link:hover {
+    color: #007BFF;
+  }
