@@ -5,6 +5,8 @@ main {
     background-color: #ddd;
     padding: 20px;
     margin: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
 
   }
   
