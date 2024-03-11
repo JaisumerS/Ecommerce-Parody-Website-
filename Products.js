@@ -1,7 +1,7 @@
-let cart = {};
+let cart = [];
 
-function addToCart(productName, productPriceString) {
-    cart[productName] = cart[productName] || { price: productPriceString, quantity: 0 };
+function addToCart(productName, productPrice) {
+    cart[productName] = cart[productName] || { price: productPrice, quantity: 0 };
     cart[productName].quantity += 1;
 
     alert(`${productName} has been added to the cart!`);
@@ -47,8 +47,8 @@ addToCartButtons.forEach((button) => {
     button.addEventListener("click", function () {
         const productCard = this.closest(".product");
         const productName = productCard.querySelector("h1").innerText;
-        const productPriceString = productCard.querySelector("p").innerText;
-        addToCart(productName, productPriceString);
+        const productPrice = productCard.querySelector("p").innerText;
+        addToCart(productName, productPrice);
     });
 });
 
