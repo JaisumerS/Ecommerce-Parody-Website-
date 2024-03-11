@@ -28,8 +28,7 @@
     <main class ="signupmain">
         <form class = "signupform" action="#" method="post">
                 <label for="Username">Username:</label>
-                <input type="text" id="Username" name="Username" placeholder="Enter your username"
-                pattern="" required><br>
+                <input type="text" id="Username" name="Username" placeholder="Enter your username" required><br>
                 <label for="'Password">Password:</label>
                 <input type="password" id="Password" name="Password" placeholder="Enter your password" required>
                 <label for="Confirm_Password">Confirm Password:</label>
@@ -42,5 +41,52 @@
     <footer>
         <p><strong>&copy; 2024 JJ-Commerce. All rights reserved.</strong></p>
     </footer>
+    <script>
+        let message = [];
+        let usertest = /^[a-zA-Z]+[a-zA-Z0-9_-]{2,19}/;
+        let passtest = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()[\]{}|;:,\.<>?/`~']).{8,}/;
+        let emailtest = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/
+
+        function validateForm(){
+            const usernameInput = document.getElementById('Username').value;
+            if (!usertest.test(usernameInput)) {
+                message.push('Check the Username');
+            }
+
+            const passwordInput = document.getElementById('Password').value;
+            if (!passtest.test(passwordInput)) {
+                message.push('Password must be at least 8 characters long and contain at least one digit, one lowercase letter, one uppercase letter, and one special character of the following: : !@#$%^&*()-_=+[]{}|;:\'",.<>?/`~');
+            }
+
+            const confirmPasswordInput = document.getElementById('Confirm_Password').value;
+            if (passwordInput !== confirmPasswordInput) {
+                message.push('Passwords doesn\'t match.');
+            }
+
+            const emailInput = document.getElementById('Email').value;
+            if (!emailtest.test(emailInput)) {
+                message.push('Check the email');
+            }
+
+            let messagebox = document.querySelector('.messagebox');
+            if (!messagebox) {
+                messagebox = document.createElement('div');
+                messagebox.classList.add('messagebox');
+                document.body.insertBefore(messagebox, document.querySelector('footer'));
+            }
+            
+            messagebox.innerHTML = '';
+            if (message.length > 0) {
+                messagebox.innerHTML = `<p>${message.join('<br>')}</p>`;
+            } else {
+                messagebox.innerHTML = `<p>Signup Succesful!<p>`;
+            }
+            message = [];
+        }
+        document.querySelector('.signupform').addEventListener('submit', function(event) {
+            event.preventDefault();
+            validateForm();
+        });
+    </script>
 </body>
 </html>
