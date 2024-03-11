@@ -44,10 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cartItem.classList.add("cart-item");
 
             cartItem.innerHTML = `
-                <p>Product: ${item.name}</p>
-                <p>Price: $${item.price.toFixed(2)}</p>
-                <p>Quantity: ${item.quantity}</p>
-                <button class="remove-button">Remove</button>
+                <p>${item.name} - ${item.price.toFixed(2)} -  ${item.quantity}<button class="remove-button">Remove</button></p>
             `;
 
             let removeButton = cartItem.querySelector(".remove-button");
