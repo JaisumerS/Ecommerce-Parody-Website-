@@ -1,71 +1,53 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let cart = [];
+let cart = [];
 
-    function addToCart(name, price) {
-        let existingItem = cart.find(item => item.name === name);
+function addToCart(productName, productPrice) {
+    cart[productName] = cart[productName] || { price: productPrice, quantity: 0 };
+    cart[productName].quantity += 1;
 
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            let newItem = {
-                name: name,
-                price: price,
-                quantity: 1,
-            };
-            cart.push(newItem);
-        }
+    alert(`${productName} has been added to the cart!`);
 
-        alert(name + " has been added to the cart!");
-
-        updateCartDisplay();
-    }
-
-    function removeFromCart(item) {
-        item.quantity -= 1;
-
-        if (item.quantity === 0) {
-            cart = cart.filter(cartItem => cartItem !== item);
-        }
-
-        updateCartDisplay();
-    }
-
-    function updateCartDisplay() {
-        let cartSection = document.getElementById("cart-section");
-        cartSection.innerHTML = "";
-
-        let displayTitle = document.createElement("h2");
-        displayTitle.textContent = "Shopping Cart";
-        displayTitle.style.textAlign = "center";
-        cartSection.appendChild(displayTitle);
-
-        cart.forEach(item => {
-            let cartItem = document.createElement("div");
-            cartItem.classList.add("cart-item");
-
-            cartItem.innerHTML = `
-                <p>${item.name} - ${item.price.toFixed(2)} -  ${item.quantity}<button class="remove-button">Remove</button></p>
-            `;
-
-            let removeButton = cartItem.querySelector(".remove-button");
-            removeButton.addEventListener("click", function () {
-                removeFromCart(item);
-            });
-
-            cartSection.appendChild(cartItem);
-        });
-    }
-
-    let addToCartButtons = document.querySelectorAll(".product button");
-
-    addToCartButtons.forEach((button, index) => {
-        button.addEventListener("click", function () {
-            let productName = document.querySelectorAll(".product h1")[index].textContent;
-            let productPrice = parseFloat(document.querySelectorAll(".product p")[index].textContent.replace("Price: $", ""));
-            addToCart(productName, productPrice);
-        });
-    });
-
-    // Call the function initially to display any existing items in the cart
     updateCartDisplay();
+}
+
+function removeFromCart(productName) {
+    cart[productName].quantity -= 1;
+    if (cart[productName].quantity === 0) {
+        delete cart[productName];
+    }
+
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    const cartDisplay = document.getElementById("cart-section");
+    cartDisplay.innerHTML = "";
+    const displayTitle = document.createElement("h2");
+    displayTitle.textContent = "Shopping Cart";
+    displayTitle.style.textAlign = "center";
+    cartDisplay.appendChild(displayTitle);
+
+    for (let productName in cart) {
+        const product = cart[productName];
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+            <p>Name: ${productName} - ${product.price} - Quantity: ${product.quantity} <button class="remove-button">Remove</button></p>
+        `;
+
+        const removeButton = cartItem.querySelector(".remove-button");
+        removeButton.addEventListener("click", () => removeFromCart(productName));
+        cartDisplay.appendChild(cartItem);
+    }
+}
+
+const addToCartButtons = document.querySelectorAll(".product button");
+addToCartButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+        const productCard = this.closest(".product");
+        const productName = productCard.querySelector("h1").innerText;
+        const productPrice = productCard.querySelector("p").innerText;
+        addToCart(productName, productPrice);
+    });
 });
+
+updateCartDisplay();
