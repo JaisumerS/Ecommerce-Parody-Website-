@@ -21,7 +21,6 @@ function removeFromCart(productName) {
 function updateCartDisplay() {
     const cartDisplay = document.getElementById("cart-section");
     cartDisplay.innerHTML = "";
-
     const displayTitle = document.createElement("h2");
     displayTitle.textContent = "Shopping Cart";
     displayTitle.style.textAlign = "center";
@@ -29,7 +28,6 @@ function updateCartDisplay() {
 
     for (let productName in cart) {
         const product = cart[productName];
-
         const cartItem = document.createElement("div");
         cartItem.classList.add("cart-item");
         cartItem.innerHTML = `
