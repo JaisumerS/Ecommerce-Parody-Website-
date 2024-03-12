@@ -32,8 +32,8 @@ function updateCartDisplay() {
         cartItem.classList.add("cart-item");
         cartItem.innerHTML = `
             <p>Name: ${productName} - ${product.price} - Quantity: ${product.quantity} <button class="remove-button">Remove</button></p>
-        `;
-
+            `;
+        
         const removeButton = cartItem.querySelector(".remove-button");
         removeButton.addEventListener("click", () => removeFromCart(productName));
         cartDisplay.appendChild(cartItem);
